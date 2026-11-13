@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vũ Minh Thư - Trang cá nhân</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fdf6f0;
+      color: #4a3525;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    section, footer {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 24px rgba(139, 90, 43, 0.08);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #8b5a2b;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #8b5a2b;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #a66d3b;
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    /* Phần giới thiệu & Ảnh cá nhân */
+    .avatar-wrapper {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid #f5dfc9;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* Phần thông tin & IELTS */
+    .school-badge {
+      display: inline-block;
+      background-color: #fdf0e6;
+      color: #8b5a2b;
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .ielts-img {
+      width: 100%;
+      max-width: 650px;
+      border-radius: 12px;
+      border: 2px solid #f0e0d0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-top: 8px;
+    }
+
+    /* Phần sở thích làm bánh */
+    .hobbies-tags {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .hobby-tag {
+      background-color: #fbeee6;
+      color: #7d4e24;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .cookie-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .cookie-card {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fffaf5;
+      border: 2px solid #f5e6d8;
+      aspect-ratio: 4 / 3;
+    }
+
+    .cookie-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .cookie-card img:hover {
+      transform: scale(1.04);
+    }
+
+    /* Phần video nhúng trực tiếp */
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Phần liên kết cuối trang */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #1877f2;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 12px 28px;
+      border-radius: 999px;
+      transition: background-color 0.25s ease, transform 0.2s ease;
+      box-shadow: 0 4px 14px rgba(24, 119, 242, 0.3);
+    }
+
+    .social-link:hover {
+      background-color: #145dbf;
+      transform: translateY(-2px);
+    }
+
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      section, footer {
+        padding: 24px 16px;
+      }
+      .avatar-wrapper {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <!-- 1. Phần giới thiệu -->
+    <section>
+      <h1>Xin chào, mình là Vũ Minh Thư</h1>
+      <div class="avatar-wrapper">
+        <img src="anh-dai-dien.jpg" alt="Ảnh của Vũ Minh Thư">
+      </div>
+    </section>
+
+    <!-- 2. Thông tin cá nhân & Thành tích IELTS -->
+    <section>
+      <h2>Về bản thân</h2>
+      <div class="school-badge">Học sinh trường THPT Hòn Gai</div>
+      <p>Gần đây tôi vừa đạt được <strong>IELTS 7.5</strong></p>
+      <img src="ielts-7-5.jpg" alt="Bảng điểm IELTS 7.5 của Vũ Minh Thư" class="ielts-img">
+    </section>
+
+    <!-- 3. Sở thích: Làm bánh & Nghe nhạc -->
+    <section>
+      <h2>Sở thích</h2>
+      <div class="hobbies-tags">
+        <span class="hobby-tag">Làm bánh</span>
+        <span class="hobby-tag">Nghe nhạc</span>
+      </div>
+
+      <h3>Những mẻ bánh quy của mình</h3>
+      <div class="cookie-gallery">
+        <div class="cookie-card">
+          <img src="banh-quy-1.jpg" alt="Bánh quy hình nhân vật hoạt hình">
+        </div>
+        <div class="cookie-card">
+          <img src="banh-quy-2.jpg" alt="Bánh quy sô-cô-la chip">
+        </div>
+        <div class="cookie-card">
+          <img src="banh-quy-3.jpg" alt="Bánh quy hình ngôi sao, trái tim và hoa">
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Video bài hát yêu thích (xem trực tiếp) -->
+    <section>
+      <h2>Bài hát tôi thích</h2>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/rYWLIJB214Q"
+          title="Bài hát tôi thích"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- 5. Liên kết cuối trang -->
+    <footer>
+      <h2>Tìm tôi ở đây</h2>
+      <a href="https://www.facebook.com/share/19msvakqDK/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook của Vũ Minh Thư">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
+        </svg>
+        <span>Facebook</span>
+      </a>
+    </footer>
+  </main>
+
+</body>
+</html>
